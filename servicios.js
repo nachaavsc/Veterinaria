@@ -282,14 +282,6 @@ const servicios = [
 ];
 
 
-/* ============================================================
-   DETALLE DE CATEGORÍA
-   Al hacer click en "Ver detalle" de una caja con imagen se
-   muestran, dentro de un panel emergente, todas las atenciones
-   de esa categoría con su etiqueta (badge) predefinida.
-   No depende del JS de Bootstrap: usa su propio overlay.
-   ============================================================ */
-
 function crearOverlayDetalle() {
     let overlay = document.getElementById("overlayDetalleServicios");
     if (overlay) return overlay;

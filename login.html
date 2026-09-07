@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Acceso y Registro - Veterinaria San Marcos</title>
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-veterinaria">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/carrusel/logo/logo.jpg" alt="Logo Veterinaria San Marcos" width="50" height="50" class="me-2">
+                <span>Veterinaria San Marcos</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-lg-3 rounded-pill px-3 py-1 btn-sm active fw-bold" href="login.html">
+                            <i class="bi bi-person-fill me-1"></i>Ingresar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 flex-grow-1 d-flex align-items-center justify-content-center">
+        <div class="row w-100 justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                    
+                    <div class="text-center mb-3">
+                        <img src="img/carrusel/logo/logo.jpg" alt="Logo" class="rounded-circle mb-2" style="width: 60px; height: 60px; object-fit: cover;">
+                        <h4 class="fw-bold text-dark mb-0">Bienvenido</h4>
+                    </div>
+
+                    <ul class="nav nav-pills nav-justified mb-4 bg-light p-1 rounded-pill" id="authTab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active rounded-pill fw-bold" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-panel" type="button">Iniciar Sesión</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link rounded-pill fw-bold" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-panel" type="button">Registrarse</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="authTabContent">
+                        
+                        <div class="tab-pane fade show active" id="login-panel">
+                            <div id="alertError" class="alert alert-danger d-none rounded-3 small" role="alert">
+                                Correo o contraseña inválidos.
+                            </div>
+
+                            <form onsubmit="validarLogin(event)">
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold text-muted">Correo Electrónico</label>
+                                    <input type="email" id="emailInput" class="form-control bg-light border-0 py-2" placeholder="admin@duocuc.cl" maxlength="100" required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label small fw-bold text-muted">Contraseña</label>
+                                    <input type="password" id="passwordInput" class="form-control bg-light border-0 py-2" placeholder="••••••••" required>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-bold shadow-sm">
+                                    Ingresar
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="register-panel">
+                            <div id="regError" class="alert alert-danger d-none rounded-3 small" role="alert"></div>
+
+                            <form onsubmit="registrarUsuario(event)">
+                                <div class="row g-2 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold text-muted">RUN (sin puntos ni guion)</label>
+                                        <input type="text" id="regRun" class="form-control bg-light border-0 py-2" placeholder="12345678K" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold text-muted">Fecha de Nacimiento (Opcional)</label>
+                                        <input type="date" id="regFecha" class="form-control bg-light border-0 py-2">
+                                    </div>
+                                </div>
+
+                                <div class="row g-2 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold text-muted">Nombre</label>
+                                        <input type="text" id="regNombre" class="form-control bg-light border-0 py-2" maxlength="50" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold text-muted">Apellidos</label>
+                                        <input type="text" id="regApellidos" class="form-control bg-light border-0 py-2" maxlength="100" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold text-muted">Correo Electrónico</label>
+                                    <input type="email" id="regCorreo" class="form-control bg-light border-0 py-2" maxlength="100" required>
+                                </div>
+
+                                <div class="row g-2 mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold text-muted">Región</label>
+                                        <select id="regRegion" class="form-select bg-light border-0 py-2" onchange="cargarComunas()" required>
+                                            <option value="">Seleccione Región</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold text-muted">Comuna</label>
+                                        <select id="regComuna" class="form-select bg-light border-0 py-2" required>
+                                            <option value="">Seleccione Comuna</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold text-muted">Dirección</label>
+                                    <input type="text" id="regDireccion" class="form-control bg-light border-0 py-2" maxlength="300" required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label small fw-bold text-muted">Tipo de Usuario</label>
+                                    <select id="regRol" class="form-select bg-light border-0 py-2">
+                                        <option value="Cliente">Cliente</option>
+                                        <option value="Admin">Administrador</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-success w-100 py-2 rounded-pill fw-bold shadow-sm">
+                                    Crear Cuenta
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer mt-auto">
+        <div class="container text-center">
+            <p class="small mb-0">© 2026 Veterinaria San Marcos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const regionesData = [
+            { nombre: "Región Metropolitana", comunas: ["Santiago", "Huechuraba", "Maipú", "Providencia", "Las Condes"] },
+            { nombre: "Valparaíso", comunas: ["Valparaíso", "Viña del Mar", "Quilpué", "Concón"] },
+            { nombre: "Biobío", comunas: ["Concepción", "Talcahuano", "Los Ángeles"] }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let selectRegion = document.getElementById('regRegion');
+            regionesData.forEach((r, idx) => {
+                let opt = document.createElement('option');
+                opt.value = idx;
+                opt.textContent = r.nombre;
+                selectRegion.appendChild(opt);
+            });
+        });
+
+        function cargarComunas() {
+            let idxRegion = document.getElementById('regRegion').value;
+            let selectComuna = document.getElementById('regComuna');
+            selectComuna.innerHTML = '<option value="">Seleccione Comuna</option>';
+
+            if (idxRegion !== "") {
+                regionesData[idxRegion].comunas.forEach(c => {
+                    let opt = document.createElement('option');
+                    opt.value = c;
+                    opt.textContent = c;
+                    selectComuna.appendChild(opt);
+                });
+            }
+        }
+
+        function validarRunChileno(run) {
+            run = run.replace(/[^0-9kK]/g, '').toUpperCase();
+            if (run.length < 8) return false;
+            let cuerpo = run.slice(0, -1);
+            let dv = run.slice(-1);
+            let suma = 0;
+            let multiplo = 2;
+
+            for (let i = cuerpo.length - 1; i >= 0; i--) {
+                suma += multiplo * parseInt(cuerpo.charAt(i));
+                multiplo = multiplo < 7 ? multiplo + 1 : 2;
+            }
+
+            let dvEsperado = 11 - (suma % 11);
+            let dvCalc = (dvEsperado === 11) ? '0' : (dvEsperado === 10) ? 'K' : dvEsperado.toString();
+            return dv === dvCalc;
+        }
+
+        function validarLogin(event) {
+            event.preventDefault();
+            let email = document.getElementById('emailInput').value.trim();
+            let password = document.getElementById('passwordInput').value.trim();
+            let alertError = document.getElementById('alertError');
+
+            if (password.length < 4 || password.length > 10) {
+                alertError.classList.remove('d-none');
+                return;
+            }
+
+            if (email === 'admin@duocuc.cl' && password === '123456') {
+                window.location.href = 'admin.html';
+            } else if (email !== '') {
+                window.location.href = 'cliente.html';
+            } else {
+                alertError.classList.remove('d-none');
+            }
+        }
+
+        function registrarUsuario(event) {
+            event.preventDefault();
+            let regError = document.getElementById('regError');
+            regError.classList.add('d-none');
+
+            let run = document.getElementById('regRun').value.trim();
+            if (!validarRunChileno(run)) {
+                regError.textContent = "El RUN ingresado no es válido (ingrese sin puntos ni guion).";
+                regError.classList.remove('d-none');
+                return;
+            }
+
+            let nombre = document.getElementById('regNombre').value.trim() + " " + document.getElementById('regApellidos').value.trim();
+            let correo = document.getElementById('regCorreo').value.trim();
+            let rol = document.getElementById('regRol').value;
+
+            let usuarios = JSON.parse(localStorage.getItem('usuariosVeterinaria')) || [];
+            usuarios.push({ nombre: nombre, correo: correo, rol: rol });
+            localStorage.setItem('usuariosVeterinaria', JSON.stringify(usuarios));
+
+            window.location.href = 'cliente.html';
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
