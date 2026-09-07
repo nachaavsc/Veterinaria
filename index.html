@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
@@ -29,7 +31,7 @@
                         <a class="nav-link active" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
+                        <a class="nav-link" href="servicios.html">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#nosotros">Nosotros</a>
@@ -76,98 +78,25 @@
 
     <section id="servicios" class="my-5">
     <div class="text-center mb-4">
-        <h5 class="text-uppercase text-secondary">Lo que realizamos</h5>
-        <h1 class="fw-bold">Nuestros servicios</h1>
+        <p class="eyebrow mb-1">Lo que realizamos</p>
+        <h1 class="fw-bold mb-4">Nuestros servicios</h1>
+
+        <div class="bg-light rounded-4 px-4 py-5 mb-4 text-center border border-2 shadow-sm mx-auto d-flex align-items-center justify-content-center" style="border-color: var(--purple) !important; max-width: 620px; min-height: 300px;">
+            <p class="text-secondary fs-5 mb-0" style="line-height: 1.7;">
+                Ofrecemos atención médica integral enfocada en prevenir, diagnosticar y tratar a tu mascota con la máxima dedicación. Contamos con instalaciones equipadas para cubrir desde consultas de rutina, esquemas de vacunación y desparasitación, hasta exámenes clínicos y procedimientos quirúrgicos en un entorno seguro y cálido.
+            </p>
+        </div>
+
+        <a href="servicios.html" class="btn btn-veterinaria-cta rounded-pill px-5 py-3 fw-bold text-white shadow d-inline-flex align-items-center gap-3 fs-5">
+            <span>Ver todos los servicios</span>
+            <i class="bi bi-arrow-right-circle-fill fs-4"></i>
+        </a>
     </div>
 
-    <div class="container my-5">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="listaProductos">
-            
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
-                    <img src="img/carrusel/servicios/peluqueria.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Peluquería">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <h5 class="card-title fw-bold text-dark">Peluquería</h5>
-                            <p class="card-text text-muted small">Ofrecemos cortes de raza, baños sanitarios e hidratación de pelaje...</p>
-                        </div>
-                        <div class="mt-3">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="fw-bold text-success fs-5">$20.000</span>
-                            </div>
-                            <button class="btn btn-outline-primary w-100 rounded-pill fw-semibold" data-bs-toggle="modal" data-bs-target="#modalPeluqueria">
-                                Ver detalle
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
-                    <img src="img/carrusel/servicios/laboratorio.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Laboratorio">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <h5 class="card-title fw-bold text-dark">Laboratorio</h5>
-                            <p class="card-text text-muted small">Realizamos exámenes de sangre, análisis clínicos y diagnósticos...</p>
-                        </div>
-                        <div class="mt-3">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="fw-bold text-success fs-5">$15.000</span>
-                            </div>
-                            <button class="btn btn-outline-primary w-100 rounded-pill fw-semibold" data-bs-toggle="modal" data-bs-target="#modalLaboratorio">
-                                Ver detalle
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
-                    <img src="img/carrusel/servicios/cirugia.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Cirugía">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <h5 class="card-title fw-bold text-dark">Cirugía</h5>
-                            <p class="card-text text-muted small">Contamos con un quirófano totalmente equipado y profesionales...</p>
-                        </div>
-                        <div class="mt-3">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="fw-bold text-success fs-5">$30.000</span>
-                            </div>
-                            <button class="btn btn-outline-primary w-100 rounded-pill fw-semibold" data-bs-toggle="modal" data-bs-target="#modalCirugia">
-                                Ver detalle
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
-                    <img src="img/carrusel/servicios/clinica.jpg" class="card-img-top object-fit-cover" style="height: 200px;" alt="Clínica general">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <h5 class="card-title fw-bold text-dark">Clínica general</h5>
-                            <p class="card-text text-muted small">Consultas médicas preventivas, vacunación, desparasitación y control...</p>
-                        </div>
-                        <div class="mt-3">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="fw-bold text-success fs-5">$10.000</span>
-                            </div>
-                            <button class="btn btn-outline-primary w-100 rounded-pill fw-semibold" data-bs-toggle="modal" data-bs-target="#modalClinica">
-                                Ver detalle
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </div>
 </section>
 
-    <section style="background-color: #007f61;" class="py-5 text-white my-5">
+    <section class="franja-brand py-5 text-white my-5">
         <div class="container">
             <div class="row text-center gy-4 align-items-center">
                 <div class="col-6 col-md-3">
@@ -187,7 +116,7 @@
                 </div>
                 <div class="col-6 col-md-3">
                     <i class="bi bi-award fs-2 mb-2 d-block opacity-90"></i>
-                    <h2 class="fw-black display-5 mb-1">+2</h2>
+                    <h2 class="fw-black display-5 mb-1">7</h2>
                     <p class="mb-0 text-white-50 fs-6 fw-normal">Años de experiencia</p>
                 </div>
             </div>
@@ -207,7 +136,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <span class="text-uppercase text-secondary fw-bold tracking-wide small">Conoce nuestro compromiso</span>
+                    <span class="eyebrow">Conoce nuestro compromiso</span>
                     <h2 class="display-6 fw-bold text-dark mt-2 mb-3">Protegemos el bienestar de quienes más amas</h2>
                     <p class="text-muted leading-relaxed mb-4">
                         En Veterinaria San Marcos nos enfocamos en brindar un trato humano, ágil y especializado. Nuestro propósito es ofrecer diagnósticos precisos en instalaciones cómodas.
@@ -226,13 +155,15 @@
                             <span class="text-dark">Equipo médico capacitado y en constante formación</span>
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-primary rounded-pill px-4 py-2 shadow-sm">Conocer al equipo</a>
+                    <a href="equipo.html" class="btn rounded-pill px-4 py-2 shadow-sm text-white border-0 btn-morado-degradado">
+                        Conocer al equipo
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" style="background-color: #007f61;" class="py-5 text-white">
+    <section id="contacto" class="franja-brand py-5 text-white">
         <div class="container my-4">
             <div class="row gy-5 align-items-center">
                 <div class="col-lg-6">
@@ -273,23 +204,27 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold text-muted">Nombre</label>
-                                    <input type="text" class="form-control bg-light border-0 py-2" placeholder="Tu nombre">
+                                    <input type="text" class="form-control bg-light border-0 py-2" placeholder="Tu nombre" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold text-muted">Email</label>
-                                    <input type="email" class="form-control bg-light border-0 py-2" placeholder="tu@email.com">
+                                    <input type="email" class="form-control bg-light border-0 py-2" placeholder="tu@email.com" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold text-muted">Teléfono</label>
-                                    <input type="tel" class="form-control bg-light border-0 py-2" placeholder="+56 9 ...">
+                                    <input type="tel" class="form-control bg-light border-0 py-2" placeholder="+56 9 ..." required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label small fw-bold text-muted">Servicio</label>
-                                    <select class="form-select bg-light border-0 py-2" id="selectServicio">
-                                        <option selected>Consulta general</option>
-                                        <option value="1">Peluquería</option>
-                                        <option value="2">Laboratorio</option>
+                                    <label class="form-label small fw-bold text-muted">Servicios</label>
+                                    <select class="form-select bg-light border-0 py-2" id="selectServicio" required >
+                                        <option value="" disabled selected>Selecciona un servicio...</option>
+                                        <option value="1">Consulta</option>
+                                        <option value="2">Vacunación</option>
                                         <option value="3">Cirugía</option>
+                                        <option value="4">Desparasitación</option>
+                                        <option value="5">Exámenes</option>
+                                        <option value="6">Otros</option>
+
                                     </select>
                                 </div>
                                 <div class="col-12">
@@ -297,7 +232,7 @@
                                     <textarea class="form-control bg-light border-0" rows="3" placeholder="Cuéntanos sobre tu mascota..."></textarea>
                                 </div>
                                 <div class="col-12 mt-4">
-                                    <button type="submit" class="btn w-100 py-2 rounded-pill fw-bold text-white" style="background-color: #007f61;">Enviar solicitud</button>
+                                    <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-bold">Enviar solicitud</button>
                                 </div>
                             </div>
                         </form>
@@ -307,38 +242,33 @@
         </div>
     </section>
 
-<footer class="site-footer bg-dark text-white pt-5 pb-3">
+<footer class="site-footer">
         <div class="container">
             <div class="row gy-4">
-                <!-- Columna 1: Branding -->
                 <div class="col-12 col-md-4">
-                    <img src="img/carrusel/logo/logo.jpg" alt="VitaVet Logo" class="footer-logo mb-3 rounded-circle" style="width: 60px; height: 60px; object-fit: cover;">
-                    <p class="text-secondary small">En VitaVet nos dedicamos a cuidar la salud y el bienestar de tu compañero con profesionalismo, tecnología y mucho cariño.</p>
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-sm btn-outline-light rounded-3 px-2 py-1"><i class="bi bi-camera">📷</i></a>
-                        <a href="#" class="btn btn-sm btn-outline-light rounded-3 px-2 py-1"><i class="bi bi-chat-left-text">💬</i></a>
-                    </div>
+                    <img src="img/carrusel/logo/logo.jpg" alt="Veterinaria San Marcos" class="mb-3 rounded-circle" style="width: 60px; height: 60px; object-fit: cover;">
+                    <p class="small">En Veterinaria San Marcos nos dedicamos a cuidar la salud y el bienestar de tu compañero con profesionalismo, tecnología y mucho cariño.</p>
                 </div>
 
-                <!-- Columna 2: Enlaces -->
                 <div class="col-12 col-md-4">
-                    <h5 class="fw-bold mb-3">Enlaces</h5>
+                    <h5 class="mb-3">Enlaces</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Servicios</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Nosotros</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Equipo</a></li>
+                        <li class="mb-2"><a href="servicios.html">Servicios</a></li>
+                        <li class="mb-2"><a href="#nosotros">Nosotros</a></li>
+                        <li class="mb-2"><a href="equipo.html">Equipo</a></li>
+                        <li class="mb-2"><a href="#contacto">Agendar</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 3: Horario -->
                 <div class="col-12 col-md-4">
-                    <h5 class="fw-bold mb-3">Horario</h5>
-                    <p class="text-secondary small mb-1">Lunes a Viernes · 9:00 – 22:00</p>
-                    <p class="text-secondary small">Sábado · 10:00 – 21:00</p>
+                    <h5 class="mb-3">Horario</h5>
+                    <p class="small mb-1">Lunes a Viernes · 9:00 – 22:00</p>
+                    <p class="small">Sábado · 10:00 – 21:00</p>
                 </div>
             </div>
 
-            <hr class="border-secondary my-4">
+            <hr class="my-4">
+            <p class="small mb-0 text-center">© 2026 Veterinaria San Marcos. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -351,6 +281,5 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="servicio.js"></script>
 </body>
 </html>

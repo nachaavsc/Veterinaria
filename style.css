@@ -1,86 +1,251 @@
+/* ============================================================
+   VETERINARIA SAN MARCOS · Sistema de diseño
+   Paleta tomada del home: verde de marca + acento morado + menta
+   Tipografía: Poppins (títulos) + Nunito Sans (texto)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+:root {
+    /* Marca · verde */
+    --brand:        #007f61;
+    --brand-dark:   #00614a;
+    --brand-mid:    #2ea782;
+    --brand-soft:   #e6f4f0;
+    --mint:         #8ed1c7;
+
+    /* Marca · morado (acento) */
+    --purple:       #8064b5;
+    --purple-dark:  #5d4791;
+    --purple-soft:  #efeaf7;
+
+    /* Neutros */
+    --ink:          #22313f;
+    --muted:        #5f6b7a;
+    --surface:      #f6f8f8;
+    --line:         #e6eae9;
+
+    /* Fuentes */
+    --font-head: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-body: 'Nunito Sans', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+    /* Overrides Bootstrap */
+    --bs-body-color: var(--ink);
+    --bs-body-font-family: var(--font-body);
+    --bs-link-color: var(--brand);
+    --bs-link-hover-color: var(--brand-dark);
+    --bs-border-color: var(--line);
+    --bs-primary: var(--brand);
+    --bs-primary-rgb: 0, 127, 97;
+}
+
+/* ===================== Base ===================== */
+body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+}
+
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-weight: 800;
+}
+
+p { line-height: 1.7; }
+
+a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--brand-dark); }
+
+::selection { background: var(--mint); color: #04352a; }
+
+/* ===================== Utilidades de marca ===================== */
+.text-brand      { color: var(--brand) !important; }
+.text-brand-dark { color: var(--brand-dark) !important; }
+.text-purple     { color: var(--purple) !important; }
+.text-orange     { color: #5fe3b8 !important; }  /* acento del hero sobre imagen oscura (nombre heredado) */
+.text-muted      { color: var(--muted) !important; }
+.text-secondary  { color: var(--muted) !important; }
+
+.bg-brand        { background-color: var(--brand) !important; }
+.bg-brand-soft   { background-color: var(--brand-soft) !important; }
+.bg-purple-soft  { background-color: var(--purple-soft) !important; }
+.bg-light        { background-color: var(--surface) !important; }
+
+.text-primary    { color: var(--brand) !important; }
+.bg-primary      { background-color: var(--brand) !important; }
+
+.fw-black        { font-weight: 800 !important; }
+.tracking-wide   { letter-spacing: 0.12em; }
+.leading-relaxed { line-height: 1.85; }
+
+.section-eyebrow,
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--brand-mid);
+}
+
+/* ===================== Botones ===================== */
+.btn { font-family: var(--font-head); font-weight: 600; }
+
+.btn-primary {
+    --bs-btn-bg: var(--brand);
+    --bs-btn-border-color: var(--brand);
+    --bs-btn-hover-bg: var(--brand-dark);
+    --bs-btn-hover-border-color: var(--brand-dark);
+    --bs-btn-active-bg: var(--brand-dark);
+    --bs-btn-active-border-color: var(--brand-dark);
+    --bs-btn-disabled-bg: var(--brand);
+    --bs-btn-disabled-border-color: var(--brand);
+}
+
+.btn-veterinaria-cta {
+    background-color: var(--brand) !important;
+    border: 2px solid var(--brand) !important;
+    color: #ffffff !important;
+    transition: all 0.25s ease;
+}
+.btn-veterinaria-cta:hover {
+    background-color: var(--brand-dark) !important;
+    border-color: var(--brand-dark) !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 127, 97, 0.28) !important;
+}
+
+.btn-morado-degradado {
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark)) !important;
+    color: #ffffff !important;
+    border: 0;
+    transition: all 0.25s ease;
+}
+.btn-morado-degradado:hover {
+    background: linear-gradient(135deg, var(--purple-dark), #4a3875) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(128, 100, 181, 0.38) !important;
+}
+
+.btn-outline-brand {
+    color: var(--brand);
+    border: 2px solid var(--brand);
+    background: transparent;
+    transition: all 0.2s ease;
+}
+.btn-outline-brand:hover { background: var(--brand); color: #ffffff; }
+
+.btn-outline-purple {
+    color: var(--purple);
+    border: 2px solid var(--purple);
+    background: transparent;
+    transition: all 0.2s ease;
+}
+.btn-outline-purple:hover { background: var(--purple); color: #ffffff; }
+
+.btn-teal {
+    background-color: var(--brand);
+    color: #ffffff;
+    border: none;
+}
+.btn-teal:hover { background-color: var(--brand-dark); color: #ffffff; }
+
+.btn-volver {
+    color: var(--brand-dark);
+    background: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+.btn-volver:hover { color: var(--brand); background: #ffffff; }
+
+/* ===================== Navbar ===================== */
 .navbar-veterinaria {
-    background: linear-gradient(to right, #ffffff, #2ea782);
+    background: linear-gradient(90deg, #ffffff 0%, var(--mint) 60%, var(--brand-mid) 100%);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
-
-.navbar-veterinaria .navbar-brand,
+.navbar-veterinaria .navbar-brand {
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--brand-dark);
+}
 .navbar-veterinaria .nav-link {
-    color: rgb(0, 0, 0);
+    color: #1f3b33;
+    font-weight: 600;
+    padding-inline: 0.9rem;
+}
+.navbar-veterinaria .nav-link:hover,
+.navbar-veterinaria .nav-link.active {
+    color: var(--brand-dark);
+}
+.navbar-veterinaria .btn-primary {
+    border-radius: 2rem;
+    padding-inline: 1.25rem;
 }
 
-.navbar-veterinaria .nav-link:hover {
-    color: #eeeeee;
-}
-
+/* ===================== Hero / carrusel ===================== */
 .carousel-item img {
-    height: 800px;
+    height: min(80vh, 760px);
     object-fit: cover;
 }
-
-
 .hero-overlay {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 8% 8%;
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 70%);
+    padding: 0 8%;
+    background: linear-gradient(90deg, rgba(0, 45, 35, 0.62) 0%, rgba(0, 45, 35, 0.18) 55%, rgba(0, 0, 0, 0) 82%);
 }
+.hero-text { max-width: 520px; }
+.hero-overlay h1 { color: #ffffff; }
 
-.hero-text {
-    max-width: 500px;
+/* ===================== Tarjetas ===================== */
+.card {
+    border-radius: 1rem;
+    border-color: var(--line);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
-.text-orange {
-    color: #40eca4;
+.card.shadow-sm { box-shadow: 0 6px 22px rgba(31, 49, 63, 0.07) !important; }
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(31, 49, 63, 0.13) !important;
 }
+.card-img-top { object-fit: cover; height: 220px; }
+.card .card-title { color: var(--ink); }
 
-.btn-teal {
-    background-color: #0d9488;
-    color: #ffffff;
-    border: none;
-}
-
-.btn-teal:hover {
-    background-color: #0f766e;
-    color: #ffffff;
-}
-
-.caja-rectangular {
-    width: 100%;              
-    height: 200px;            
-    background-color: #007f61;
-    margin: 150px 0;          
-    padding: 0;            
-}
-
-
+/* ===================== Sección "Nosotros" ===================== */
 .nosotros-img-container {
     position: relative;
-    border-radius: 1.5rem;
+    border-radius: 1.25rem;
     overflow: hidden;
 }
-
 .nosotros-img-container img {
     width: 100%;
-    height: 420px;
+    height: 440px;
     object-fit: cover;
 }
-
 .badge-flotante {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    max-width: 80%;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    bottom: 18px;
+    left: 18px;
+    max-width: 82%;
+    border: 1px solid var(--line);
+    border-radius: 1rem !important;
 }
-
-
 .badge-check {
-    background-color: #8ed1c7;
+    background-color: var(--brand);
     color: #ffffff;
     width: 22px;
     height: 22px;
@@ -89,165 +254,173 @@
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 700;
+    flex: none;
 }
 
-.fw-black {
-    font-weight: 900 !important;
+/* ===================== Franja verde (stats / contacto) ===================== */
+.franja-brand { background-color: var(--brand); color: #ffffff; }
+.franja-brand .text-white-50 { color: rgba(255, 255, 255, 0.72) !important; }
+
+/* ===================== Encabezado interior (equipo / servicios) ===================== */
+.bg-equipo { background: var(--brand-soft); }
+.header-equipo {
+    background: linear-gradient(120deg, var(--brand-soft) 0%, #ffffff 55%, var(--purple-soft) 100%);
+    border-bottom: 1px solid var(--line);
+}
+.header-equipo h1 { color: var(--brand) !important; }
+.header-equipo .lead { color: var(--muted) !important; }
+.header-equipo .badge.bg-light {
+    background: #ffffff !important;
+    color: var(--purple) !important;
+    border: 1px solid var(--purple-soft);
 }
 
-/* EQUIPO DE TRABAJOO */
-
-.btn-volver {
-    color: #6a4f9e;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* ===================== Tarjetas de especialistas ===================== */
+.card-especialista {
+    border-radius: 1.25rem;
+    background: #ffffff;
+    border: 1px solid var(--line) !important;
 }
-
-.position-relative.mx-auto.my-3 {
-    margin-bottom: 2rem !important; 
-}
-
-
+.card-especialista .card-title { color: var(--purple); }
 .img-especialista {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-   
     padding: 5px;
     background-color: #ffffff;
-    border: 3px solid #8ed1c7;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+    border: 3px solid var(--mint);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
-
-
 .badge-logro {
     position: absolute;
     bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #8064b5;
+    background-color: var(--purple);
     color: #ffffff;
     font-size: 11px;
-    padding: 4px 12px;
-    border-radius: 20px;
+    font-weight: 600;
     white-space: nowrap;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 4px 14px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(128, 100, 181, 0.35);
 }
+.bg-teal-light { background: var(--brand-soft) !important; }
+.text-teal-dark { color: var(--brand-dark) !important; }
+.badge.bg-teal-light {
+    font-weight: 600;
+    border-radius: 2rem;
+    padding: 0.4rem 0.9rem;
+}
+.position-relative.mx-auto.my-3 { margin-bottom: 2rem !important; }
 
+/* ===================== Footer ===================== */
 .site-footer {
-    background-color: #2ea782;
-    color: #ffffff;
-    padding: 40px 0;
+    background-color: #14213b !important;
+    color: #e9edf5;
+    padding: 3rem 0 1.5rem;
 }
+.site-footer h4, .site-footer h5 { color: #ffffff; font-weight: 700; }
+.site-footer p, .site-footer .text-secondary, .site-footer a { color: #aab3c5 !important; }
+.site-footer a { text-decoration: none; transition: color 0.2s ease; }
+.site-footer a:hover { color: #ffffff !important; }
+.site-footer hr, .site-footer .border-secondary { border-color: rgba(255, 255, 255, 0.15) !important; }
 
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-.footer-col.branding {
-    flex: 1 1 100%;
-    margin-bottom: 20px;
-}
-.footer-col.branding p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: #2d3748;
-    color: #ffffff;
-    border-radius: 8px;
-    text-decoration: none;
-}
-.footer-col h4 {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.footer-col.links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-col.links li {
-    margin-bottom: 12px;
-}
-
-.footer-col.links a {
-    color: #a0aec0;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.footer-col.links a:hover {
-    color: #ffffff;
-}
-
-.footer-col.schedule p {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid #2d3748;
-    color: #a0aec0;
-    font-size: 13px;
-}
-.footer-bottom p {
-    margin: 0;
-}
-
+/* ===================== Botones flotantes ===================== */
 .floating-buttons {
     position: fixed;
-    bottom: 30px;
     right: 20px;
+    bottom: 28px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 9999;
+    z-index: 1050;
 }
-
 .float-btn {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
     font-size: 20px;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
     transition: transform 0.2s ease;
 }
-.float-btn:hover {
-    transform: scale(1.08);
+.float-btn:hover { transform: scale(1.09); }
+.card-btn { background-color: var(--brand); }
+.wsp-btn { background-color: #25d366; }
+.insta-btn { background: linear-gradient(45deg, #f09433 0%, #dc2743 50%, #bc1888 100%); }
+
+/* ===================== Overlay "Ver detalle" de servicios ===================== */
+.vs-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1080;
+    background: rgba(10, 30, 24, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
-.card-btn {
-    background-color: #3b82f6;
+.vs-overlay.is-open { display: flex; }
+.vs-modal {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    width: 100%;
+    max-width: 640px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
-.wsp-btn {
-    background-color: #25d366;
+.vs-modal__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.4rem;
+    background: var(--brand-soft);
+    border-bottom: 1px solid var(--line);
 }
-.insta-btn {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+.vs-modal__head h5 { margin: 0; color: var(--brand-dark); }
+.vs-modal__close {
+    border: 0;
+    background: transparent;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--muted);
+    cursor: pointer;
+}
+.vs-modal__body { padding: 0.5rem 1.4rem 1rem; overflow-y: auto; }
+.vs-modal__foot { padding: 0.85rem 1.4rem; border-top: 1px solid var(--line); text-align: right; }
+
+.vs-item { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.vs-item:last-child { border-bottom: 0; }
+.vs-item__badge {
+    display: inline-block;
+    background: var(--brand);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 0.2rem 0.7rem;
+    border-radius: 2rem;
+    margin-bottom: 0.5rem;
+}
+.vs-item__row { display: flex; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
+.vs-item__name { margin: 0 0 0.2rem; font-family: var(--font-head); font-weight: 700; color: var(--ink); }
+.vs-item__meta { margin: 0; font-size: 0.85rem; color: var(--muted); }
+.vs-item__obs { margin: 0.15rem 0 0; font-size: 0.8rem; font-style: italic; color: #8a94a0; }
+.vs-item__price { font-family: var(--font-head); font-weight: 700; color: var(--brand); white-space: nowrap; }
+
+/* ===================== Responsivo ===================== */
+@media (max-width: 768px) {
+    .carousel-item img { height: 62vh; }
+    .hero-overlay { padding: 0 6%; }
+    .nosotros-img-container img { height: 320px; }
+    .card-img-top { height: 190px; }
 }
