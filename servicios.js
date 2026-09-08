@@ -348,7 +348,6 @@ function mostrarDetalleCategoria(categoria) {
     overlay.classList.add("is-open");
 }
 
-// Delegación: cualquier click sobre un elemento con data-categoria abre el detalle.
 document.addEventListener("click", function (e) {
     const btn = e.target.closest("[data-categoria]");
     if (btn) {

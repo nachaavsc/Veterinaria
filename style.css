@@ -1,35 +1,25 @@
-/* ============================================================
-   VETERINARIA SAN MARCOS · Sistema de diseño
-   Paleta tomada del home: verde de marca + acento morado + menta
-   Tipografía: Poppins (títulos) + Nunito Sans (texto)
-   ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap');
 
 :root {
-    /* Marca · verde */
     --brand:        #007f61;
     --brand-dark:   #00614a;
     --brand-mid:    #2ea782;
     --brand-soft:   #e6f4f0;
     --mint:         #8ed1c7;
 
-    /* Marca · morado (acento) */
     --purple:       #8064b5;
     --purple-dark:  #5d4791;
     --purple-soft:  #efeaf7;
 
-    /* Neutros */
     --ink:          #22313f;
     --muted:        #5f6b7a;
     --surface:      #f6f8f8;
     --line:         #e6eae9;
 
-    /* Fuentes */
     --font-head: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --font-body: 'Nunito Sans', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-    /* Overrides Bootstrap */
     --bs-body-color: var(--ink);
     --bs-body-font-family: var(--font-body);
     --bs-link-color: var(--brand);
@@ -39,7 +29,6 @@
     --bs-primary-rgb: 0, 127, 97;
 }
 
-/* ===================== Base ===================== */
 body {
     font-family: var(--font-body);
     color: var(--ink);
@@ -66,11 +55,10 @@ a:hover { color: var(--brand-dark); }
 
 ::selection { background: var(--mint); color: #04352a; }
 
-/* ===================== Utilidades de marca ===================== */
 .text-brand      { color: var(--brand) !important; }
 .text-brand-dark { color: var(--brand-dark) !important; }
 .text-purple     { color: var(--purple) !important; }
-.text-orange     { color: #5fe3b8 !important; }  /* acento del hero sobre imagen oscura (nombre heredado) */
+.text-orange     { color: #5fe3b8 !important; }  
 .text-muted      { color: var(--muted) !important; }
 .text-secondary  { color: var(--muted) !important; }
 
@@ -95,7 +83,6 @@ a:hover { color: var(--brand-dark); }
     color: var(--brand-mid);
 }
 
-/* ===================== Botones ===================== */
 .btn { font-family: var(--font-head); font-weight: 600; }
 
 .btn-primary {
@@ -167,7 +154,7 @@ a:hover { color: var(--brand-dark); }
 }
 .btn-volver:hover { color: var(--brand); background: #ffffff; }
 
-/* ===================== Navbar ===================== */
+/*  Navbar  */
 .navbar-veterinaria {
     background: linear-gradient(90deg, #ffffff 0%, var(--mint) 60%, var(--brand-mid) 100%);
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
@@ -193,7 +180,7 @@ a:hover { color: var(--brand-dark); }
     padding-inline: 1.25rem;
 }
 
-/* ===================== Hero / carrusel ===================== */
+/* carrusel */
 .carousel-item img {
     height: min(80vh, 760px);
     object-fit: cover;
@@ -211,7 +198,7 @@ a:hover { color: var(--brand-dark); }
 .hero-text { max-width: 520px; }
 .hero-overlay h1 { color: #ffffff; }
 
-/* ===================== Tarjetas ===================== */
+/*  Tarjetas*/
 .card {
     border-radius: 1rem;
     border-color: var(--line);
@@ -225,7 +212,7 @@ a:hover { color: var(--brand-dark); }
 .card-img-top { object-fit: cover; height: 220px; }
 .card .card-title { color: var(--ink); }
 
-/* ===================== Sección "Nosotros" ===================== */
+/*Sección "Nosotros"  */
 .nosotros-img-container {
     position: relative;
     border-radius: 1.25rem;
@@ -258,11 +245,11 @@ a:hover { color: var(--brand-dark); }
     flex: none;
 }
 
-/* ===================== Franja verde (stats / contacto) ===================== */
+
 .franja-brand { background-color: var(--brand); color: #ffffff; }
 .franja-brand .text-white-50 { color: rgba(255, 255, 255, 0.72) !important; }
 
-/* ===================== Encabezado interior (equipo / servicios) ===================== */
+
 .bg-equipo { background: var(--brand-soft); }
 .header-equipo {
     background: linear-gradient(120deg, var(--brand-soft) 0%, #ffffff 55%, var(--purple-soft) 100%);
@@ -276,7 +263,7 @@ a:hover { color: var(--brand-dark); }
     border: 1px solid var(--purple-soft);
 }
 
-/* ===================== Tarjetas de especialistas ===================== */
+/* Tarjetas de especialistas  */
 .card-especialista {
     border-radius: 1.25rem;
     background: #ffffff;
@@ -315,7 +302,7 @@ a:hover { color: var(--brand-dark); }
 }
 .position-relative.mx-auto.my-3 { margin-bottom: 2rem !important; }
 
-/* ===================== Footer ===================== */
+/*  Footer  */
 .site-footer {
     background-color: #14213b !important;
     color: #e9edf5;
@@ -327,7 +314,7 @@ a:hover { color: var(--brand-dark); }
 .site-footer a:hover { color: #ffffff !important; }
 .site-footer hr, .site-footer .border-secondary { border-color: rgba(255, 255, 255, 0.15) !important; }
 
-/* ===================== Botones flotantes ===================== */
+/*  Botones flotantes  */
 .floating-buttons {
     position: fixed;
     right: 20px;
@@ -355,7 +342,7 @@ a:hover { color: var(--brand-dark); }
 .wsp-btn { background-color: #25d366; }
 .insta-btn { background: linear-gradient(45deg, #f09433 0%, #dc2743 50%, #bc1888 100%); }
 
-/* ===================== Overlay "Ver detalle" de servicios ===================== */
+
 .vs-overlay {
     position: fixed;
     inset: 0;
@@ -417,7 +404,7 @@ a:hover { color: var(--brand-dark); }
 .vs-item__obs { margin: 0.15rem 0 0; font-size: 0.8rem; font-style: italic; color: #8a94a0; }
 .vs-item__price { font-family: var(--font-head); font-weight: 700; color: var(--brand); white-space: nowrap; }
 
-/* ===================== Responsivo ===================== */
+/*  Responsivo  */
 @media (max-width: 768px) {
     .carousel-item img { height: 62vh; }
     .hero-overlay { padding: 0 6%; }

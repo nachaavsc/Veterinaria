@@ -203,7 +203,9 @@
 
                 <div class="col-lg-6">
                     <div class="bg-white rounded-4 p-4 p-md-5 text-dark shadow">
-                        <form>
+                        <div id="mensajeFeedback" class="alert d-none py-2 px-3 small rounded-3" role="alert"></div>
+
+                            <form id="formAgenda">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold text-muted">Nombre</label>
@@ -290,9 +292,13 @@
             feedback.classList.remove('d-none');
             return;
         }
-        feedback.className = 'alert alert-success mb-3';
-        feedback.textContent = '¡Solicitud enviada con éxito!';
+        feedback.className = 'alert alert-success py-2 px-3 small rounded-3 mb-3';
+        feedback.textContent = '¡Tu cita ha sido agendada con éxito! Revisaremos la disponibilidad y te enviaremos un correo a la brevedad con los detalles. Gracias por confiar en nosotros.';
         feedback.classList.remove('d-none');
+
+        setTimeout(() => {
+            feedback.classList.add('d-none');
+        }, 10000);
         
         form.reset();
         form.classList.remove('was-validated');
